@@ -5,7 +5,7 @@
          version="3.1">
   <servlet>
   	<servlet-name>home</servlet-name>
-  	<servlet-class>blog.GuestbookServlet</servlet-class>
+  	<servlet-class>blog.ViewHomeServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>

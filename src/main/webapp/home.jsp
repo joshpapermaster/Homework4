@@ -38,6 +38,14 @@
 	
 	}
 	
+	String subscribe = request.getParameter("subscribe");
+
+    if (subscribe == null) {
+
+        subscribe = "null";
+
+    }
+	
 	pageContext.setAttribute("guestbookName", guestbookName);
 	
     UserService userService = UserServiceFactory.getUserService();
@@ -83,11 +91,33 @@
 	<ul>
 		<li><a href="all">Click Here To View All</a></li>
 		<li><a href="post">Click Here To Post</a></li>
+		<li><form action="post" method="Post">
+	  
+	      <div><input type="submit" name="type" value="Subscribe/Unsubscribe"/></div>
+	      
+	      <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
+	
+	    </form></li>
  	</ul>
+ 	
 	<div id="posts">
      
 <%
-     
+     if (subscribe.equals("null")) {
+    	 //do nothing
+     }
+     else if (subscribe.equals("true")) {
+    	 %>
+    	 	<p>Subscribed</p>
+    	 <%
+    	 
+     }
+     else {
+    	 %>
+    	 	<p>Unsubscribed</p>
+    	 <%
+     }
+
      if (greetings.isEmpty()) {
  %>
 
