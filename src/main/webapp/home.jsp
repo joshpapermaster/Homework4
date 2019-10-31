@@ -113,16 +113,18 @@
 
                         %>
 
-                        <p id="title"><b>${fn:escapeXml(greeting_title)}</b>:</p>
+                        <div class="post">
+                			<p class="title"><b>${fn:escapeXml(greeting_title)}</b>:</p>
 
-                        <%
+                <%
 
-                    }
+            }
 
-                    %>
+            %>
 
-                    <div id="content"><blockquote>${fn:escapeXml(greeting_content)}</blockquote></div>
-        			<p id="signature"> Written by ${fn:escapeXml(greeting_user.nickname)}</p>
+				            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
+							<p> Written by ${fn:escapeXml(greeting_user.nickname)}</p>
+						</div>
                     <%
 
         }

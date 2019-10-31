@@ -109,8 +109,8 @@
                 pageContext.setAttribute("greeting_user", greeting.getUser());
 
                 %>
-
-                <p><b>${fn:escapeXml(greeting_title)}</b>:</p>
+				<div class="post">
+                	<p class="title"><b>${fn:escapeXml(greeting_title)}</b>:</p>
 
                 <%
 
@@ -118,8 +118,9 @@
 
             %>
 
-            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
-			<p> Written by ${fn:escapeXml(greeting_user.nickname)}</p>
+		            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
+					<p> Written by ${fn:escapeXml(greeting_user.nickname)}</p>
+				</div>
             <%
 
         }

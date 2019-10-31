@@ -6,3 +6,15 @@ body {
 	display: flex;
 	justify-content: space-between;
 }
+
+#posts {
+	width: 80%;
+    left: 10%;
+    position: relative;
+}
+
+.post {
+	text-align: center;
+	padding: 10px;
+	border: 1px solid black;
+}
