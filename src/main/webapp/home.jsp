@@ -49,23 +49,20 @@
       pageContext.setAttribute("user", user);
 
 %>
-
-<p>Hello, ${fn:escapeXml(user.nickname)}! (You can
-
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
-
+<div id ="signTag">
+<p>WELCOME TO OUR EE461L BLOG</p>
+<p>Signed in as: ${fn:escapeXml(user.nickname)} (You can <a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
+</div>
 <%
 
     } else {
 
 %>
-
-<p>Hello!
-
-<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
-
-to include your name with greetings you BlogPost.</p>
-
+<div id ="signTag">
+<p>WELCOME TO OUR EE461L BLOG</p>
+<p>Please <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
+</p>
+</div>
 <%
 
     }
@@ -84,6 +81,10 @@ to include your name with greetings you BlogPost.</p>
      // Run an ancestor query to ensure we see the most up-to-date
 
      // view of the Greetings belonging to the selected Guestbook.
+%>
+	<div id="posts">
+     
+<%
      
      if (greetings.isEmpty()) {
  %>
@@ -129,6 +130,7 @@ to include your name with greetings you BlogPost.</p>
     }
 
 %>
+	</div>
 	<ul>
 		<li><a href="all">Click Here To View All</a></li>
 		<li><a href="post">Click Here To Post</a></li>
