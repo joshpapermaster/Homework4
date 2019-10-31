@@ -79,6 +79,10 @@
      // view of the Greetings belonging to the selected Guestbook.
      
 %>
+	<ul>
+		<li><a href="home">Click Here To Go Home</a></li>
+		<li><a href="post">Click Here To Post</a></li>
+ 	</ul>
 	<div id="posts">
      
 <%
@@ -118,8 +122,8 @@
 
             %>
 
-		            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
-					<p> Written by ${fn:escapeXml(greeting_user.nickname)}</p>
+		            <blockquote class="content">${fn:escapeXml(greeting_content)}</blockquote>
+					<p class="sign"> Written by ${fn:escapeXml(greeting_user.nickname)}</p>
 				</div>
             <%
 
@@ -129,10 +133,6 @@
 
 %>
 	</div>
-	<ul>
-		<li><a href="home">Click Here To Go Home</a></li>
-		<li><a href="post">Click Here To Post</a></li>
- 	</ul>
 
   </body>
 

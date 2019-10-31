@@ -17,4 +17,9 @@ body {
 	text-align: center;
 	padding: 10px;
 	border: 1px solid black;
+	margin-bottom:1px;
+}
+
+.title {
+	text-align: left;
 }
