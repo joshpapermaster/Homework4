@@ -48,13 +48,11 @@ public class ViewHomeServlet extends HttpServlet {
 	      for (Subscriber sub : subscribers) {
 	    	  if(sub.getUser().equals(user)) {
 	    		  flag = false;
+	    		  ofy().delete().type(Subscriber.class).id(sub.id).now();
 	    		  break;
 	    	  }
 	      }
-	      if (flag == false) {
-	    	  //Remove user
-	      }
-	      else {
+	      if (flag) {
 	    	  //Add user
 	    	  Subscriber greeting = new Subscriber (user, guestbookName);
 		      
