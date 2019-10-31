@@ -59,6 +59,9 @@
 %>
 <div id ="signTag">
 <p>WELCOME TO OUR EE461L BLOG</p>
+<div id="puppyContainer">
+	<img id="puppyPic" src="puppy.jpeg" alt="Puppy">
+</div>
 <p>Signed in as: ${fn:escapeXml(user.nickname)} (You can <a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
 </div>
 <%
@@ -68,6 +71,9 @@
 %>
 <div id ="signTag">
 <p>WELCOME TO OUR EE461L BLOG</p>
+<div id="puppyContainer">
+	<img id="puppyPic" src="puppy.jpeg" alt="Puppy">
+</div>
 <p>Please <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
 </p>
 </div>
@@ -88,35 +94,42 @@
 
      // view of the Greetings belonging to the selected Guestbook.
 %>
+	
 	<ul>
 		<li><a href="all">Click Here To View All</a></li>
 		<li><a href="post">Click Here To Post</a></li>
+<%
+	if (user != null) {
+%>
 		<li><form action="home" method="Post">
 	  
-	      <div><input type="submit" name="type" value="Subscribe/Unsubscribe"/></div>
+	      <div><input type="submit" name="type" value="Subscribe / Unsubscribe"/></div>
 	      
 	      <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
 	
 	    </form></li>
  	</ul>
- 	
+ <%
+	}
+	if (subscribe.equals("null")) {
+		 //do nothing
+	}
+	else if (subscribe.equals("true")) {
+		 %>
+		 	<p>Successfully Subscribed</p>
+		 <%
+		 
+	}
+	else {
+		 %>
+		 	<p>Successfully Unsubscribed</p>
+		 <%
+	}
+ %>
 	<div id="posts">
      
 <%
-     if (subscribe.equals("null")) {
-    	 //do nothing
-     }
-     else if (subscribe.equals("true")) {
-    	 %>
-    	 	<p>Subscribed</p>
-    	 <%
-    	 
-     }
-     else {
-    	 %>
-    	 	<p>Unsubscribed</p>
-    	 <%
-     }
+
 
      if (greetings.isEmpty()) {
  %>

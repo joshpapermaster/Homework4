@@ -51,6 +51,9 @@
 %>
 <div id ="signTag">
 <p>WELCOME TO OUR EE461L BLOG</p>
+<div id="puppyContainer">
+	<img id="puppyPic" src="puppy.jpeg" alt="Puppy">
+</div>
 <p>Signed in as: ${fn:escapeXml(user.nickname)} (You can <a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
 </div>
 <%
@@ -60,6 +63,9 @@
 %>
 <div id ="signTag">
 <p>WELCOME TO OUR EE461L BLOG</p>
+<div id="puppyContainer">
+	<img id="puppyPic" src="puppy.jpeg" alt="Puppy">
+</div>
 <p>Please <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
 </p>
 </div>

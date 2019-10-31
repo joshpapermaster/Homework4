@@ -24,7 +24,7 @@ public class ViewHomeServlet extends HttpServlet {
 
 		public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 			resp.setContentType("text/plain");
-			resp.sendRedirect("/all.jsp");
+			resp.sendRedirect("/home.jsp");
 		}
 		
 		public void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -34,7 +34,6 @@ public class ViewHomeServlet extends HttpServlet {
 	      UserService userService = UserServiceFactory.getUserService();
 
 	      User user = userService.getCurrentUser();
-
 	      
 	      String guestbookName = req.getParameter("guestbookName");
 
@@ -46,9 +45,11 @@ public class ViewHomeServlet extends HttpServlet {
 		   	
 	      boolean flag = true;
 	      for (Subscriber sub : subscribers) {
-	    	  if(sub.getUser().equals(user)) {
+	    	  if (sub.getUser() == null)
+	    		  ofy().delete().entity(sub).now();
+	    	  else if(sub.getUser().getEmail().equals(user.getEmail())) {
 	    		  flag = false;
-	    		  ofy().delete().type(Subscriber.class).id(sub.id).now();
+	    		  ofy().delete().entity(sub).now();
 	    		  break;
 	    	  }
 	      }
