@@ -91,7 +91,7 @@
 	<ul>
 		<li><a href="all">Click Here To View All</a></li>
 		<li><a href="post">Click Here To Post</a></li>
-		<li><form action="post" method="Post">
+		<li><form action="home" method="Post">
 	  
 	      <div><input type="submit" name="type" value="Subscribe/Unsubscribe"/></div>
 	      
