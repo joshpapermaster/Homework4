@@ -55,7 +55,7 @@ public class SendMail extends HttpServlet {
 	 	String message = "Posts from the last 24 hours: \n\n";
 	 	
 	 	int len = greetings.size();
-    	for (int i=len-1; i>-1 && i>len-6; i--) {
+    	for (int i=len-1; i>-1; i--) {
     		BlogPost greet = greetings.get(i);
     		if(greet.date.getTime() > time) {
 	 			String temp = greet.toString();
