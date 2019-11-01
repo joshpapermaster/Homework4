@@ -108,6 +108,7 @@
 	      <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
 	
 	    </form></li>
+	    
  	</ul>
  <%
 	}

@@ -13,6 +13,16 @@
   	<url-pattern>/home</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>mail</servlet-name>
+  	<servlet-class>blog.SendMail</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>mail</servlet-name>
+  	<url-pattern>/mail</url-pattern>
+  </servlet-mapping>
+  
    <servlet>
   	<servlet-name>post</servlet-name>
   	<servlet-class>blog.HomeServlet</servlet-class>

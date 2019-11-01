@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/mail</url>
+    <description>daily mail job</description>
+    <schedule>every day 17:00</schedule>
+    <timezone>America/Menominee</timezone>
+  </cron>
+</cronentries>
